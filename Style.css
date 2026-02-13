@@ -1,0 +1,370 @@
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffd6e8, #ffc2dd, #ffe0f0);
+}
+
+/* Botón música */
+.btn-musica {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(255, 179, 198, 0.8);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.btn-musica:hover {
+  transform: scale(1.2);
+}
+
+/* ================================= */
+/* CAPA SUAVE DE MOVIMIENTO (MÁS RÁPIDO Y SUTIL) */
+/* ================================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.4), transparent 60%),
+              radial-gradient(circle at 80% 70%, rgba(255,182,193,0.3), transparent 60%);
+  animation: movimientoSuave 12s ease-in-out infinite alternate;
+}
+
+@keyframes movimientoSuave {
+  0% { transform: translate(0px, 0px); }
+  100% { transform: translate(20px, -20px); }
+}
+
+/* ================================= */
+/* FLORES DECORATIVAS FIJAS */
+/* ================================= */
+
+.flor {
+  position: fixed;
+  font-size: 40px;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Esquinas */
+.flor1 { top: 10px; left: 10px; }
+.flor2 { top: 10px; right: 10px; }
+.flor3 { bottom: 10px; left: 10px; }
+.flor4 { bottom: 10px; right: 10px; }
+
+/* Laterales */
+.flor5 { top: 35%; left: 5px; font-size: 32px; }
+.flor6 { top: 60%; right: 5px; font-size: 32px; }
+
+/* Colores complementarios suaves */
+.flor1 { color: #ff8fab; }   /* rosa fuerte */
+.flor2 { color: #c77dff; }   /* lavanda */
+.flor3 { color: #ffb4a2; }   /* durazno */
+.flor4 { color: #ffd6ff; }   /* rosa claro */
+.flor5 { color: #bde0fe; }   /* azul pastel */
+.flor6 { color: #ffc8dd; }   /* rosa bebé */
+
+/* ================================= */
+/* Pantallas */
+/* ================================= */
+
+.pantalla {
+  display: none;
+  min-height: 100vh;
+  padding: 25px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.activa {
+  display: flex;
+}
+
+/* ================================= */
+/* Título */
+/* ================================= */
+
+.titulo {
+  font-size: 22px;
+  font-style: italic;
+}
+
+.latido {
+  animation: latido 3s infinite;
+}
+
+@keyframes latido {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+/* ================================= */
+/* Textos */
+/* ================================= */
+
+.mensaje,
+.mensaje-grande {
+  font-style: italic;
+  max-width: 340px;
+  line-height: 1.6;
+}
+
+.mensaje { font-size: 15px; }
+.mensaje-grande { font-size: 17px; }
+
+.contador {
+  font-size: 42px;
+  font-weight: 300;
+  color: #d63384;
+}
+
+/* ================================= */
+/* Botón */
+/* ================================= */
+
+.btn-vamos {
+  background-color: #ffafcc;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 40px;
+  font-size: 16px;
+  font-style: italic;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-vamos:hover {
+  transform: scale(1.05);
+  background-color: #ff8fab;
+}
+
+/* ================================= */
+/* Fotos */
+/* ================================= */
+
+.foto-contenedor img {
+  width: 220px;
+  max-width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  margin: 20px auto;
+  display: block;
+}
+
+/* ================================= */
+/* Página carta */
+/* ================================= */
+
+.carta-page {
+  overflow-y: auto;
+}
+
+.carta-container {
+  width: 95%;
+  max-width: 600px;
+  text-align: left;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.8;
+  position: relative;
+}
+
+.carta p {
+  margin: 0 0 15px 0;
+  white-space: pre-line;
+}
+
+.escribiendo::after {
+  content: "|";
+  animation: parpadeo 1s infinite;
+}
+
+@keyframes parpadeo {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ================================= */
+/* Stickers */
+/* ================================= */
+
+.sticker {
+  width: 100px;
+  shape-margin: 10px;
+  transition: all 0.8s ease;
+}
+
+.oculto-sticker {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.sticker.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.sticker-top {
+  float: left;
+  shape-outside: circle();
+  margin: 0 15px 10px 0;
+}
+
+.sticker-right {
+  float: right;
+  shape-outside: circle();
+  margin: 10px 0 10px 15px;
+}
+
+.sticker-left {
+  float: left;
+  shape-outside: circle();
+  margin: 10px 15px 10px 0;
+}
+
+/* ================================= */
+/* Foto final centrada */
+/* ================================= */
+
+.oculto {
+  opacity: 0;
+}
+
+.foto-final {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  transition: opacity 1.5s ease, transform 1.5s ease;
+  transform: translateY(20px);
+}
+
+.foto-final img {
+  width: 220px;
+  max-width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.foto-final.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================= */
+/* Corazones finales */
+/* ================================= */
+
+#corazones span {
+  position: fixed;
+  bottom: -20px;
+  font-size: 18px;
+  animation: flotar 4s linear forwards;
+}
+
+@keyframes flotar {
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+/* ============================= */
+/* CORAZONES FLOTANDO CONTINUOS */
+/* ============================= */
+
+.corazones-fondo {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.corazones-fondo span {
+  position: absolute;
+  bottom: -50px;
+  font-size: 22px;
+  opacity: 0.25;
+  animation: flotarCorazon linear infinite;
+}
+
+/* Posiciones diferentes */
+.corazones-fondo span:nth-child(1) {
+  left: 10%;
+  animation-duration: 12s;
+  animation-delay: 0s;
+}
+
+.corazones-fondo span:nth-child(2) {
+  left: 25%;
+  animation-duration: 15s;
+  animation-delay: 2s;
+}
+
+.corazones-fondo span:nth-child(3) {
+  left: 40%;
+  animation-duration: 13s;
+  animation-delay: 4s;
+}
+
+.corazones-fondo span:nth-child(4) {
+  left: 55%;
+  animation-duration: 16s;
+  animation-delay: 1s;
+}
+
+.corazones-fondo span:nth-child(5) {
+  left: 70%;
+  animation-duration: 14s;
+  animation-delay: 3s;
+}
+
+.corazones-fondo span:nth-child(6) {
+  left: 85%;
+  animation-duration: 18s;
+  animation-delay: 5s;
+}
+
+.corazones-fondo span:nth-child(7) {
+  left: 50%;
+  animation-duration: 20s;
+  animation-delay: 6s;
+}
+
+.corazones-fondo span:nth-child(8) {
+  left: 30%;
+  animation-duration: 17s;
+  animation-delay: 8s;
+}
+
+/* Animación */
+@keyframes flotarCorazon {
+  0% {
+    transform: translateY(0) scale(0.8) rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2) rotate(360deg);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <title>Feliz cumpleaños 💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="flor flor1">🌸</div>
+<div class="flor flor2">🌷</div>
+<div class="flor flor3">🌺</div>
+<div class="flor flor4">🌼</div>
+<div class="flor flor5">🌹</div>
+<div class="flor flor6">💮</div>
+
+
+<div class="corazones-fondo">
+  <span>💖</span>
+  <span>💕</span>
+  <span>💗</span>
+  <span>💞</span>
+  <span>💘</span>
+  <span>💓</span>
+  <span>💝</span>
+  <span>💖</span>
+</div>
+
+<!-- Botón para música -->
+<button id="btnMusica" class="btn-musica">🔊</button>
+<audio id="musicaFondo" src="Torna.mp3" preload="auto" loop></audio>
+
+<audio id="typingSound" src="typing.mp3" preload="auto"></audio>
+<audio id="dingSound" src="ding.mp3" preload="auto"></audio>
+
+<!-- ========= PÁGINA 1 ========= -->
+<section id="pagina1" class="pantalla activa">
+  <h1 class="titulo latido">Feliz cumpleaños mi amor 💖</h1>
+
+  <div class="foto-contenedor">
+    <img src="amor.jpg" alt="Foto de ella">
+  </div>
+
+  <p class="mensaje">
+    Gracias por existir, por abrazar mi vida con tu amor y por convertir cada día a tu lado en el lugar más bonito donde quiero quedarme ✨💖
+  </p>
+
+  <button class="btn-vamos" onclick="irPagina2()">
+    💗 Vamos 💗
+  </button>
+</section>
+
+<!-- ========= PÁGINA 2 ========= -->
+<section id="pagina2" class="pantalla">
+  <p class="mensaje">
+    Hoy celebro no solo un año más de tu vida, sino también otro año a tu lado, uno de los muchos que espero compartir contigo, mi dulce y tierna niña 💖
+  </p>
+
+  <div class="foto-contenedor">
+    <img src="vida.jpg" alt="Otra foto">
+  </div>
+
+  <div class="temporizador-box">
+    <p class="frase-temporizador">Ven junto a mí, mi amor 💕</p>
+    <div id="contador" class="contador">10</div>
+  </div>
+</section>
+
+<!-- ========= PÁGINA 3 ========= -->
+<section id="pagina3" class="pantalla carta-page">
+
+  <div class="carta-container">
+    <div class="carta">
+
+      <!-- Bloque 1 (SIN sticker) -->
+      <p id="b1"></p>
+
+      <!-- Bloque 2 -->
+      <div class="bloque">
+        <img src="pato1.5.png" class="sticker sticker-top oculto-sticker">
+        <p id="b2"></p>
+      </div>
+
+      <!-- Bloque 3 -->
+      <div class="bloque">
+        <img src="pato2.5.png" class="sticker sticker-right oculto-sticker">
+        <p id="b3"></p>
+      </div>
+
+      <!-- Bloque 4 -->
+      <div class="bloque">
+        <img src="pato3.5.png" class="sticker sticker-left oculto-sticker">
+        <p id="b4"></p>
+      </div>
+
+    </div>
+
+    <div id="corazones"></div>
+
+    <div id="fotoFinal" class="foto-final oculto">
+      <img src="final.jpg" alt="Foto final juntos">
+    </div>
+
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
